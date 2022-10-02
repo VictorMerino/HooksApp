@@ -18,7 +18,7 @@ export const CounterApp = () => {
           onClick={() =>
             setCounters({
               ...counters,
-              counter1: counters.counter1 + 1,
+              counter1: counter1 + 1,
             })
           }
         >
@@ -28,13 +28,13 @@ export const CounterApp = () => {
 
       <hr />
       <h2>
-        Counter2: {counters.counter2}
+        Counter2: {counter2}
         <button
           className="btn btn-secondary"
           onClick={() =>
             setCounters({
               ...counters,
-              counter2: counters.counter2 + 1,
+              counter2: counter2 + 1,
             })
           }
         >
@@ -44,13 +44,13 @@ export const CounterApp = () => {
 
       <hr />
       <h2>
-        Counter3 {counters.counter3}
+        Counter3 {counter3}
         <button
           className="btn btn-secondary"
           onClick={() =>
             setCounters({
               ...counters,
-              counter3: counters.counter3 + 1,
+              counter3: counter3 + 1,
             })
           }
         >
