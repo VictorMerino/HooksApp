@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const CounterApp = () => {
-  const [counters, setCounters] = useState({
+  const [{ counter1, counter2, counter3 }, setCounters] = useState({
     counter1: 10,
     counter2: 20,
     counter3: 30,
@@ -10,14 +10,14 @@ export const CounterApp = () => {
     <>
       <h1></h1>
       <h2>
-        Counter1: {counters.counter1}
+        Counter1: {counter1}
         <button
           className="btn btn-secondary"
           onClick={() =>
             setCounters({
-              counter1: counters.counter1 + 1,
-              counter2: counters.counter2,
-              counter3: counters.counter3,
+              counter1: counter1 + 1,
+              counter2,
+              counter3,
             })
           }
         >
@@ -27,14 +27,14 @@ export const CounterApp = () => {
 
       <hr />
       <h2>
-        Counter2: {counters.counter2}
+        Counter2: {counter2}
         <button
           className="btn btn-secondary"
           onClick={() =>
             setCounters({
-              counter1: counters.counter1,
-              counter2: counters.counter2 + 1,
-              counter3: counters.counter3,
+              counter1,
+              counter2: counter2 + 1,
+              counter3,
             })
           }
         >
@@ -44,14 +44,14 @@ export const CounterApp = () => {
 
       <hr />
       <h2>
-        Counter3 {counters.counter3}
+        Counter3 {counter3}
         <button
           className="btn btn-secondary"
           onClick={() =>
             setCounters({
-              counter1: counters.counter1,
-              counter2: counters.counter2,
-              counter3: counters.counter3 + 1,
+              counter1,
+              counter2,
+              counter3: counter3 + 1,
             })
           }
         >
