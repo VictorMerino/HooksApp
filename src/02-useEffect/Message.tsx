@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Message = () => {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
   useEffect(() => {
     console.log("Message mounted");
 
     const onMouseMove = ({ x, y }: { x: number; y: number }) => {
       const coords = { x, y };
-      console.log(coords);
+      setCoords(coords);
     };
     window.addEventListener("mousemove", onMouseMove);
     return () => {
@@ -19,6 +20,8 @@ export const Message = () => {
   return (
     <>
       <h5 className="text-danger">User already exists</h5>
+      <hr />
+      Coords: {JSON.stringify(coords)}
     </>
   );
 };
