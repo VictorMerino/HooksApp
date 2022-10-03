@@ -18,12 +18,12 @@ export const SimpleForm = () => {
   };
 
   useEffect(() => {
-    console.log("Form State changed");
+    // console.log("Form State changed");
   }, [formState]);
 
   useEffect(() => {
     // This can be used to validate emails against Kickbox, for example
-    console.log("Email changed.");
+    // console.log("Email changed.");
   }, [email]);
 
   return (
