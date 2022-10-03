@@ -8,13 +8,12 @@ export const SimpleForm = () => {
 
   const { username, email } = formState;
 
-  const onInputChange = ({ target }) => {
+  const onInputChange = ({ target }: { target: HTMLInputElement }) => {
     const { name, value } = target;
     setFormState({
       ...formState,
       [name]: value,
     });
-    console.log(name, value);
   };
   return (
     <>
