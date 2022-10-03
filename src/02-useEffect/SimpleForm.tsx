@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({
@@ -15,6 +15,11 @@ export const SimpleForm = () => {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    console.log("Form State changed");
+  }, [formState]);
+
   return (
     <>
       <h1>Simple Form</h1>
