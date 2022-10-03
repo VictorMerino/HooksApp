@@ -31,25 +31,29 @@ export const SimpleForm = () => {
       <h1>Simple Form</h1>
       <hr />
 
-      <input
-        type="text"
-        className="form-control mt-3"
-        placeholder="Username"
-        name="username"
-        value={username}
-        onChange={onInputChange}
-      />
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Username"
+          name="username"
+          value={username}
+          onChange={onInputChange}
+        />
 
-      {username === "DavolesVic" && <Message />}
+        {username === "DavolesVic" && <Message />}
+      </div>
 
-      <input
-        type="email"
-        className="form-control mt-3"
-        placeholder="Email"
-        name="email"
-        value={email}
-        onChange={onInputChange}
-      />
+      <div className="mb-3">
+        <input
+          type="email"
+          className="form-control"
+          placeholder="Email"
+          name="email"
+          value={email}
+          onChange={onInputChange}
+        />
+      </div>
     </>
   );
 };
