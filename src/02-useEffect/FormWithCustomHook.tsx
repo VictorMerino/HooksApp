@@ -10,6 +10,8 @@ export const FormWithCustomHook = () => {
 
   // const { username, email, password } = formState;
 
+  // react-hook-form: custom hook that can be used for this stuff
+
   return (
     <>
       <h1>Form with Custom Hook</h1>
