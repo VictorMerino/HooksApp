@@ -6,7 +6,7 @@ export const useCounter = ({
   maxValue = 20,
   step = 1,
 }) => {
-  const [counter, setCounter] = useState((initialValue = 10));
+  const [counter, setCounter] = useState(initialValue);
 
   const increment = () => {
     if (counter === maxValue) return;
