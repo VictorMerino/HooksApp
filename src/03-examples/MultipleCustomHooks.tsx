@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
 type BBQuote = {
@@ -8,7 +8,8 @@ type BBQuote = {
   quote: string;
 };
 export const MultipleCustomHooks = () => {
-  const url = "https://www.breakingbadapi.com/api/quotes/1";
+  const [counter, setCounter] = useState(1);
+  const url = `https://www.breakingbadapi.com/api/quotes/${counter}`;
   const {
     data,
     isLoading,
@@ -26,7 +27,12 @@ export const MultipleCustomHooks = () => {
         <blockquote>{data && data[0].quote}</blockquote>
       )}
 
-      <button className="btn btn-primary">Get next quote</button>
+      <button
+        className="btn btn-primary"
+        onClick={() => setCounter(counter + 1)}
+      >
+        Get next quote
+      </button>
     </>
   );
 };
