@@ -29,7 +29,11 @@ export const MultipleCustomHooks = () => {
         <blockquote>{data && data[0].quote}</blockquote>
       )}
 
-      <button className="btn btn-primary" onClick={() => increment()}>
+      <button
+        className="btn btn-primary"
+        onClick={() => increment()}
+        disabled={isLoading}
+      >
         Get next quote
       </button>
     </>
