@@ -1,6 +1,5 @@
 import React from "react";
-import { useFetch } from "../hooks/useFetch";
-import { useCounter } from "../hooks/useCounter";
+import { useFetch, useCounter } from "../hooks";
 
 type BBQuote = {
   quoute_id: number;
