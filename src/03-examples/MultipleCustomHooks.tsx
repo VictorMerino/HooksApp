@@ -25,6 +25,8 @@ export const MultipleCustomHooks = () => {
       ) : (
         <blockquote>{data && data[0].quote}</blockquote>
       )}
+
+      <button className="btn btn-primary">Get next quote</button>
     </>
   );
 };
