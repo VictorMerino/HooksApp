@@ -1,12 +1,9 @@
 import React from "react";
 import { useFetch, useCounter } from "../hooks";
+import { Quote } from "./Quote";
+import { LoadingQuote } from "./LoadingQuote";
+import { BBQuote } from "../types/BBQuote";
 
-type BBQuote = {
-  quoute_id: number;
-  series: string;
-  author: string;
-  quote: string;
-};
 export const MultipleCustomHooks = () => {
   const { counter, increment } = useCounter({ initialValue: 1, step: 1 });
   const url = `https://www.breakingbadapi.com/api/quotes/${counter}`;
@@ -22,11 +19,7 @@ export const MultipleCustomHooks = () => {
       <div>Breaking Bad quotes</div>
       <hr />
 
-      {isLoading ? (
-        <h3 className="alert alert-info">...Loading...</h3>
-      ) : (
-        <blockquote>{data && data[0].quote}</blockquote>
-      )}
+      {isLoading ? <LoadingQuote /> : data && <Quote data={data} />}
 
       <button
         className="btn btn-primary"
