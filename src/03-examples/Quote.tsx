@@ -4,9 +4,12 @@ import { BBQuote } from "../types/BBQuote";
 export const Quote = ({ quote }: { quote: BBQuote }) => {
   return (
     <blockquote>
-      Quote: {quote.quote}
-      <hr />
-      Author: {quote.author}
+      <p>
+        <strong>Quote:</strong> {quote.quote}
+      </p>
+      <p>
+        <strong>Author:</strong> {quote.author}
+      </p>
     </blockquote>
   );
 };
