@@ -1,7 +1,6 @@
 import React from "react";
 import { useFetch, useCounter } from "../hooks";
-import { Quote } from "./Quote";
-import { LoadingQuote } from "./LoadingQuote";
+import { Quote, LoadingQuote } from "../components";
 import { BBQuote } from "../types/BBQuote";
 
 export const MultipleCustomHooks = () => {
