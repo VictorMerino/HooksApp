@@ -19,7 +19,7 @@ export const MultipleCustomHooks = () => {
       <div>Breaking Bad quotes</div>
       <hr />
 
-      {isLoading ? <LoadingQuote /> : data && <Quote data={data} />}
+      {isLoading ? <LoadingQuote /> : data && <Quote quote={data[0]} />}
 
       <button
         className="btn btn-primary"
