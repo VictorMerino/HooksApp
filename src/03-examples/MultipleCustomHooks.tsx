@@ -16,7 +16,7 @@ export const MultipleCustomHooks = () => {
 
   return (
     <>
-      <div>Breaking Bad quotes</div>
+      <h1>Breaking Bad quotes</h1>
       <hr />
 
       {isLoading ? <LoadingQuote /> : data && <Quote quote={data[0]} />}
