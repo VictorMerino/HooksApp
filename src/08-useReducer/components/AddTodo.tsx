@@ -1,13 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useForm } from "../../hooks";
 
 export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
-  const [inputValue, setInputValue] = useState("");
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
+  const { formState, onInputChange, todoValue } = useForm({ todoValue: "" });
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    onNewTodo(inputValue);
+    onNewTodo(formState);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -15,9 +13,10 @@ export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
       <input
         type="text"
         placeholder="What to do?"
+        name="todoValue"
         className="form-control"
-        onChange={handleInputChange}
-        value={inputValue}
+        onChange={onInputChange}
+        value={todoValue}
       />
       <button type="submit" className="btn btn-outline-primary">
         +
