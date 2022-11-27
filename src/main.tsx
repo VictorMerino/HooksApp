@@ -12,10 +12,12 @@ import { MemorizeWithHook } from "./06-memos/MemorizeWithHook";
 import { CallbackHook } from "./06-memos/CallbackHook";
 import { Father } from "./07-memoTask/Father";
 
+import "./08-useReducer/intro-reducer.ts";
+
 import { HooksApp } from "./HooksApp";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+/* ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   // <React.StrictMode>
   // <FormWithCustomHook />
   // <MultipleCustomHooks />
@@ -24,4 +26,4 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   // <CallbackHook />
   <Father />
   // </React.StrictMode>
-);
+); */
