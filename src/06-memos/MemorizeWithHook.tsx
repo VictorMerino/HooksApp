@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useCounter } from "../hooks";
 
 const heavyStuff = (iterationNumber = 100) => {
@@ -9,15 +9,18 @@ const heavyStuff = (iterationNumber = 100) => {
 };
 
 export const MemorizeWithHook = () => {
-  const { counter, increment } = useCounter({ initialValue: 1 });
+  const { counter, increment } = useCounter({ initialValue: 4000 });
   const [show, setShow] = useState(true);
+
+  // Memorize the value each time the counter value changes
+  const memorizedValue = useMemo(() => heavyStuff(counter), [counter]);
   return (
     <>
       <h1>
         Counter: <small>{counter}</small>
       </h1>
       <hr />
-      <h4> {heavyStuff(1500)}</h4>
+      <h4> {memorizedValue}</h4>
 
       <button className="btn btn-primary" onClick={() => increment()}>
         +1
