@@ -17,8 +17,10 @@ const initialState: State[] = [
   },
 ];
 
-const todoReducer = (state = initialState, action = "") => {
+const todoReducer = (state = initialState, action = {}) => {
+  // @ts-expect-error
   if (action.type === "[TODO add todo]") {
+    // @ts-expect-error
     return [...state, action.payload];
   }
   return state;
