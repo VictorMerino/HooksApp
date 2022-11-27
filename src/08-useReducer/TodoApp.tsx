@@ -1,6 +1,8 @@
 import React, { useReducer } from "react";
 
 import { Todo } from "./types/Todo";
+import { TodoList } from "./TodoList";
+import { AddTodo } from "./AddTodo";
 import { todoReducer } from "./todoReducer";
 
 export const TodoApp = () => {
@@ -21,6 +23,10 @@ export const TodoApp = () => {
   const onNewTodo = (todo: Todo) => {
     console.log({ todo });
   };
+
+  const onRemoveTodo = (todo: Todo) => {
+    console.log({ todo });
+  };
   return (
     <>
       <h1>
@@ -30,36 +36,10 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-12 col-sm-7">
-          // TodoList todos
-          <ul className="list-group mb-4">
-            //TodoItem todo
-            <li className="list-group-item d-flex justify-content-between">
-              <span className="align-self-center">Item 1</span>
-              <button className="btn btn-outline-danger">-</button>
-            </li>
-            <li className="list-group-item d-flex justify-content-between">
-              <span className="align-self-center">Item 2</span>
-              <button className="btn btn-outline-danger">-</button>
-            </li>
-            <li className="list-group-item d-flex justify-content-between">
-              <span className="align-self-center">Item 3</span>
-              <button className="btn btn-outline-danger">-</button>
-            </li>
-          </ul>
+          <TodoList todos={initialState} />
         </div>
         <div className="col-12 col-sm-5">
-          // AddTodo onNewTodo( todo )
-          <form>
-            <label>Add TO-DO</label>
-            <input
-              type="text"
-              placeholder="What to do?"
-              className="form-control"
-            />
-            <button type="submit" className="btn btn-outline-primary">
-              +
-            </button>
-          </form>
+          <AddTodo onNewTodo={onNewTodo} />
         </div>
       </div>
     </>
