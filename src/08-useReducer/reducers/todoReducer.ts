@@ -1,9 +1,8 @@
 // @ts-expect-error
-export const todoReducer = (initialState, action) => {
+export const todoReducer = (initialState = [], action) => {
   switch (action.type) {
-    case "ABC":
-      throw new Error("Action.type = ABC not implemented");
-      break;
+    case "[TODO] Add Todo":
+      return [...initialState, action.payload];
 
     default:
       return initialState;
