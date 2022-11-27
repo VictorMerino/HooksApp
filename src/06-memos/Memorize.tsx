@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCounter } from "../hooks";
-import { Small } from "./Small";
+import { SmallMemorized } from "./SmallMemorized";
 
 export const Memorize = () => {
   const { counter, increment } = useCounter({ initialValue: 1 });
@@ -8,7 +8,7 @@ export const Memorize = () => {
   return (
     <>
       <h1>
-        Counter: <Small value={counter} />
+        Counter: <SmallMemorized value={counter} />
       </h1>
       <hr />
 
