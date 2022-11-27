@@ -10,7 +10,7 @@ export const Father = () => {
   }; */
 
   const increment = useCallback((num: number) => {
-    setValue((value) => value + num);
+    setValue((oldValue) => oldValue + num);
   }, []);
 
   return (
