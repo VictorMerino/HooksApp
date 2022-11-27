@@ -1,9 +1,10 @@
 import React, { useReducer } from "react";
 
+import { Todo } from "./types/Todo";
 import { todoReducer } from "./todoReducer";
 
 export const TodoApp = () => {
-  const initialState = [
+  const initialState: Todo[] = [
     {
       id: new Date().getTime(),
       description: "Do the laundry",
@@ -16,6 +17,10 @@ export const TodoApp = () => {
     },
   ];
   const [state, dispatch] = useReducer(todoReducer, initialState);
+
+  const onNewTodo = (todo: Todo) => {
+    console.log({ todo });
+  };
   return (
     <>
       <h1>
@@ -25,7 +30,9 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-12 col-sm-7">
+          // TodoList todos
           <ul className="list-group mb-4">
+            //TodoItem todo
             <li className="list-group-item d-flex justify-content-between">
               <span className="align-self-center">Item 1</span>
               <button className="btn btn-outline-danger">-</button>
@@ -41,6 +48,7 @@ export const TodoApp = () => {
           </ul>
         </div>
         <div className="col-12 col-sm-5">
+          // AddTodo onNewTodo( todo )
           <form>
             <label>Add TO-DO</label>
             <input
