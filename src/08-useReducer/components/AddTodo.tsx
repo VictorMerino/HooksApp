@@ -2,7 +2,9 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useForm } from "../../hooks";
 
 export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
-  const { formState, onInputChange, todoValue } = useForm({ todoValue: "" });
+  const { formState, onInputChange, todoDescription } = useForm({
+    todoDescription: "",
+  });
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     onNewTodo(formState);
@@ -16,7 +18,7 @@ export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
         name="todoValue"
         className="form-control"
         onChange={onInputChange}
-        value={todoValue}
+        value={todoDescription}
       />
       <button type="submit" className="btn btn-outline-primary">
         +
