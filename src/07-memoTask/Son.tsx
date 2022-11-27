@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 
 interface SonParams {
   number: number;
   increment: Function;
 }
 
-export const Son = ({ number, increment }: SonParams) => {
+export const Son = memo(({ number, increment }: SonParams) => {
   console.log("  Me volví a generar :(  ");
 
   return (
@@ -13,4 +13,4 @@ export const Son = ({ number, increment }: SonParams) => {
       {number}
     </button>
   );
-};
+});
