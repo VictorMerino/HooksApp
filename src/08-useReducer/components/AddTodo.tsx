@@ -1,13 +1,23 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useForm } from "../../hooks";
+import { Todo } from "../types";
 
 export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
-  const { formState, onInputChange, todoDescription } = useForm({
-    todoDescription: "",
+  // @ts-expect-error
+  const { description, onInputChange, onResetForm } = useForm({
+    description: "",
   });
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    onNewTodo(formState);
+    if (!description.length) return;
+
+    const newTodo: Todo = {
+      id: new Date().getTime(),
+      description,
+      done: false,
+    };
+    onNewTodo(newTodo);
+    onResetForm();
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -15,10 +25,10 @@ export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
       <input
         type="text"
         placeholder="What to do?"
-        name="todoValue"
+        name="description"
         className="form-control"
         onChange={onInputChange}
-        value={todoDescription}
+        value={description}
       />
       <button type="submit" className="btn btn-outline-primary">
         +
