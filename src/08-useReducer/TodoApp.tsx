@@ -1,8 +1,7 @@
 import React, { useReducer } from "react";
 
-import { Todo } from "./types/Todo";
-import { TodoList } from "./TodoList";
-import { AddTodo } from "./AddTodo";
+import { Todo } from "./types";
+import { TodoList, AddTodo } from "./components";
 import { todoReducer } from "./todoReducer";
 
 export const TodoApp = () => {

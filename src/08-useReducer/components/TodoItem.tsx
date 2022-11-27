@@ -1,4 +1,4 @@
-import { Todo } from "./types/Todo";
+import { Todo } from "../types";
 
 export const TodoItem = ({ todo }: { todo: Todo }) => {
   return (
