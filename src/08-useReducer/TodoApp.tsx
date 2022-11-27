@@ -4,19 +4,9 @@ import { Todo } from "./types";
 import { TodoList, AddTodo } from "./components";
 import { todoReducer } from "./reducers";
 
+import { initialState } from "./data/initialDummyData";
+
 export const TodoApp = () => {
-  const initialState: Todo[] = [
-    {
-      id: new Date().getTime(),
-      description: "Do the laundry",
-      done: false,
-    },
-    {
-      id: new Date().getTime() + 1,
-      description: "Go shopping",
-      done: false,
-    },
-  ];
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
   const onNewTodo = (todo: Todo) => {
