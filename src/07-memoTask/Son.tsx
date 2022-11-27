@@ -1,12 +1,11 @@
 import React from "react";
 
-export const Son = ({
-  number,
-  increment,
-}: {
+interface SonParams {
   number: number;
   increment: Function;
-}) => {
+}
+
+export const Son = ({ number, increment }: SonParams) => {
   console.log("  Me volví a generar :(  ");
 
   return (
