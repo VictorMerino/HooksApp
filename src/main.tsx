@@ -10,6 +10,7 @@ import { Layout } from "./05-useLayoutEffect/Layout";
 import { Memorize } from "./06-memos/Memorize";
 import { MemorizeWithHook } from "./06-memos/MemorizeWithHook";
 import { CallbackHook } from "./06-memos/CallbackHook";
+import { Father } from "./07-memoTask/Father";
 
 import { HooksApp } from "./HooksApp";
 import "./index.css";
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   // <MultipleCustomHooks />
   // <Layout />
   // <MemorizeWithHook />
-  <CallbackHook />
+  // <CallbackHook />
+  <Father />
   // </React.StrictMode>
 );
