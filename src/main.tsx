@@ -13,7 +13,7 @@ import { CallbackHook } from "./06-memos/CallbackHook";
 import { Father } from "./07-memoTask/Father";
 import { TodoApp } from "./08-useReducer/TodoApp";
 
-// import "./08-useReducer/intro-reducer.ts";
+// import "./08-useReducer/reducers/intro-reducer.ts";
 
 import { HooksApp } from "./HooksApp";
 import "./index.css";

@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 
 import { Todo } from "./types";
 import { TodoList, AddTodo } from "./components";
-import { todoReducer } from "./todoReducer";
+import { todoReducer } from "./reducers";
 
 export const TodoApp = () => {
   const initialState: Todo[] = [
