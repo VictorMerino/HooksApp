@@ -9,6 +9,7 @@ import { FocusScreen } from "./04-useRef/FocusScreen";
 import { Layout } from "./05-useLayoutEffect/Layout";
 import { Memorize } from "./06-memos/Memorize";
 import { MemorizeWithHook } from "./06-memos/MemorizeWithHook";
+import { CallbackHook } from "./06-memos/CallbackHook";
 
 import { HooksApp } from "./HooksApp";
 import "./index.css";
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   // <FormWithCustomHook />
   // <MultipleCustomHooks />
   // <Layout />
-  <MemorizeWithHook />
+  // <MemorizeWithHook />
+  <CallbackHook />
   // </React.StrictMode>
 );
