@@ -42,7 +42,6 @@ export const useTodos = () => {
     };
     dispatch(action);
   };
-  // TO-DO: get pendingTodos
   return {
     todos,
     todosCount,
