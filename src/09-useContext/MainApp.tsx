@@ -1,6 +1,4 @@
-import React from "react";
 import { Navigate, Route, Routes } from "react-router";
-import { NavLink } from "react-router-dom";
 
 import { AboutPage, HomePage, LoginPage } from "./views";
 import { Navbar } from "./structure/Navbar";
