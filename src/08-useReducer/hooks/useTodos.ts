@@ -4,17 +4,18 @@ import { initialState } from "../data/initialDummyData";
 
 import { Todo } from "../types";
 import { todoReducer } from "../reducers";
+import { getItems, setItem } from "../services/LocalStorageRepository";
 
 const init = () => {
-  return JSON.parse(localStorage.getItem("todos")) || initialState;
+  return getItems() || initialState;
 };
 
 export const useTodos = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialState, init);
+  const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(state));
-  }, [state]);
+    setItem(todos);
+  }, [todos]);
 
   const onNewTodo = (todo: Todo) => {
     const action = {
@@ -39,5 +40,6 @@ export const useTodos = () => {
     };
     dispatch(action);
   };
-  return { state, onNewTodo, onRemoveTodo, onToggleTodo };
+  // TO-DO: get pendingTodos
+  return { todos, onNewTodo, onRemoveTodo, onToggleTodo };
 };

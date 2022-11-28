@@ -3,20 +3,20 @@ import { TodoList, AddTodo } from "./components";
 import { useTodos } from "./hooks/useTodos";
 
 export const TodoApp = () => {
-  const { state, onNewTodo, onRemoveTodo, onToggleTodo } = useTodos();
+  const { todos, onNewTodo, onRemoveTodo, onToggleTodo } = useTodos();
 
   return (
     <>
       <h1>
-        TodoApp: {state.length} {""}
-        <small>(pendientes: {state.length})</small>
+        TodoApp: {todos.length} {""}
+        <small>(pendientes: {todos.length})</small>
       </h1>
       <hr />
 
       <div className="row">
         <div className="col-12 col-sm-7">
           <TodoList
-            todos={state}
+            todos={todos}
             onRemoveTodo={onRemoveTodo}
             onToggleTodo={onToggleTodo}
           />
