@@ -13,6 +13,8 @@ const init = () => {
 export const useTodos = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
+  let todosCount = todos.length;
+  let todosPendingCount = todos.filter((todo) => !todo.done).length;
   useEffect(() => {
     setItem(todos);
   }, [todos]);
@@ -41,5 +43,12 @@ export const useTodos = () => {
     dispatch(action);
   };
   // TO-DO: get pendingTodos
-  return { todos, onNewTodo, onRemoveTodo, onToggleTodo };
+  return {
+    todos,
+    todosCount,
+    todosPendingCount,
+    onNewTodo,
+    onRemoveTodo,
+    onToggleTodo,
+  };
 };

@@ -3,13 +3,20 @@ import { TodoList, AddTodo } from "./components";
 import { useTodos } from "./hooks";
 
 export const TodoApp = () => {
-  const { todos, onNewTodo, onRemoveTodo, onToggleTodo } = useTodos();
+  const {
+    todos,
+    todosCount,
+    todosPendingCount,
+    onNewTodo,
+    onRemoveTodo,
+    onToggleTodo,
+  } = useTodos();
 
   return (
     <>
       <h1>
-        TodoApp: {todos.length} {""}
-        <small>(pendientes: {todos.length})</small>
+        TodoApp: {todosCount} {""}
+        <small>(pendientes: {todosPendingCount})</small>
       </h1>
       <hr />
 
