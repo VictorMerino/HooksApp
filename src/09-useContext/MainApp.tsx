@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router";
 
 import { AboutPage, HomePage, LoginPage } from "./views";
-import { MyNavbar } from "./structure/MyNavBar";
+import { MyNavbar } from "./structure/MyNavbar";
 
 export const MainApp = () => {
   return (
