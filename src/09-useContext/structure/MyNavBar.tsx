@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export const MyNavbar = () => {
   const isItemActive = (isActive) => `nav-link ${isActive ? "active" : ""}`;
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg">
+    <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
       <div className="container-fluid">
         <ul className="navbar-nav">
           <NavLink className={isItemActive} to="/">
