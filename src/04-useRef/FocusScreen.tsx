@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 export const FocusScreen = () => {
-  const myInput = useRef();
+  const myInput = useRef<HTMLInputElement>();
   const onClick = () => {
     myInput.current?.select();
   };
