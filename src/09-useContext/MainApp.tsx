@@ -1,13 +1,13 @@
 import { Navigate, Route, Routes } from "react-router";
 
 import { AboutPage, HomePage, LoginPage } from "./views";
-import { Navbar } from "./structure/Navbar";
+import { MyNavbar } from "./structure/MyNavBar";
 
 export const MainApp = () => {
   return (
     <>
       <h1>useContext App</h1>
-      <Navbar />
+      <MyNavbar />
       <hr />
 
       <Routes>
