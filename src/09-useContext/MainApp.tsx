@@ -3,14 +3,13 @@ import { Navigate, Route, Routes } from "react-router";
 import { NavLink } from "react-router-dom";
 
 import { AboutPage, HomePage, LoginPage } from "./views";
+import { Navbar } from "./structure/Navbar";
 
 export const MainApp = () => {
   return (
     <>
       <h1>useContext App</h1>
-      <NavLink to="/">Homepage</NavLink>
-      <NavLink to="/login">Login</NavLink>
-      <NavLink to="/about">About</NavLink>
+      <Navbar />
       <hr />
 
       <Routes>
