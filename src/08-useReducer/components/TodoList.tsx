@@ -5,15 +5,15 @@ import { TodoItem } from ".";
 
 interface TodoListProps {
   todos: Todo[];
-  onDeleteTodo: Function;
+  onRemoveTodo: Function;
 }
 
-export const TodoList = ({ todos, onDeleteTodo }: TodoListProps) => {
+export const TodoList = ({ todos, onRemoveTodo }: TodoListProps) => {
   return (
     <ul className="list-group mb-4">
       {todos.map((todo) => {
         return (
-          <TodoItem todo={todo} key={todo.id} onDeleteTodo={onDeleteTodo} />
+          <TodoItem todo={todo} key={todo.id} onRemoveTodo={onRemoveTodo} />
         );
       })}
     </ul>

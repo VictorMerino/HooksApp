@@ -42,7 +42,7 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-12 col-sm-7">
-          <TodoList todos={state} onDeleteTodo={onRemoveTodo} />
+          <TodoList todos={state} onRemoveTodo={onRemoveTodo} />
         </div>
         <div className="col-12 col-sm-5">
           <AddTodo onNewTodo={onNewTodo} />
