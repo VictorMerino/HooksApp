@@ -5,7 +5,7 @@ export const MyNavbar = () => {
   const isItemActive = ({ isActive }: { isActive: boolean }) =>
     `nav-link ${isActive ? "active" : ""}`;
   return (
-    <nav className="navbar navbar-light navbar-expand-md">
+    <nav className="navbar navbar-light navbar-expand-sm">
       <div className="container-fluid">
         <ul className="navbar-nav">
           <NavLink className={isItemActive} to="/">
