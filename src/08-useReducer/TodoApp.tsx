@@ -1,51 +1,17 @@
-import React, { useEffect, useReducer } from "react";
-
-import { Todo } from "./types";
 import { TodoList, AddTodo } from "./components";
-import { todoReducer } from "./reducers";
 
-import { initialState } from "./data/initialDummyData";
-
-const init = () => {
-  return JSON.parse(localStorage.getItem("todos")) || initialState;
-};
+import { useTodos } from "./hooks/useTodos";
 
 export const TodoApp = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialState, init);
+  // useTodo
+  // todos, onNewTodo, onRemoveTodo, onToggleTodo
+  const { state, onNewTodo, onRemoveTodo, onToggleTodo } = useTodos();
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(state));
-  }, [state]);
-
-  const onNewTodo = (todo: Todo) => {
-    const action = {
-      type: "[TODO] Add Todo",
-      payload: todo,
-    };
-    dispatch(action);
-  };
-
-  const onRemoveTodo = (todoId: number) => {
-    const action = {
-      type: "[TODO] Remove Todo",
-      payload: todoId,
-    };
-    console.log({ todoId });
-    dispatch(action);
-  };
-
-  const onToggleTodo = (todoId: number) => {
-    const action = {
-      type: "[TODO] Toggle Todo",
-      payload: todoId,
-    };
-    console.log({ todoId });
-    dispatch(action);
-  };
   return (
     <>
       <h1>
-        TodoApp: 3 <small>(pendientes: 2)</small>
+        TodoApp: {state.length} {""}
+        <small>(pendientes: {state.length})</small>
       </h1>
       <hr />
 
