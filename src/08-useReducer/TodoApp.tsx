@@ -25,8 +25,13 @@ export const TodoApp = () => {
     dispatch(action);
   };
 
-  const onRemoveTodo = (todo: Todo) => {
-    console.log({ todo });
+  const onRemoveTodo = (todoId: number) => {
+    const action = {
+      type: "[TODO] Remove Todo",
+      payload: todoId,
+    };
+    console.log({ todoId });
+    dispatch(action);
   };
   return (
     <>
@@ -37,7 +42,7 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-12 col-sm-7">
-          <TodoList todos={state} />
+          <TodoList todos={state} onDeleteTodo={onRemoveTodo} />
         </div>
         <div className="col-12 col-sm-5">
           <AddTodo onNewTodo={onNewTodo} />
