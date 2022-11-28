@@ -22,17 +22,19 @@ export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>Add TO-DO</label>
-      <input
-        type="text"
-        placeholder="What to do?"
-        name="description"
-        className="form-control"
-        onChange={onInputChange}
-        value={description}
-      />
-      <button type="submit" className="btn btn-outline-primary">
-        +
-      </button>
+      <div className="input-group">
+        <input
+          type="text"
+          placeholder="What to do?"
+          name="description"
+          className="form-control"
+          onChange={onInputChange}
+          value={description}
+        />
+        <button type="submit" className="btn btn-outline-primary">
+          +
+        </button>
+      </div>
     </form>
   );
 };
