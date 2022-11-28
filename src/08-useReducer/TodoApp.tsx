@@ -3,8 +3,6 @@ import { TodoList, AddTodo } from "./components";
 import { useTodos } from "./hooks/useTodos";
 
 export const TodoApp = () => {
-  // useTodo
-  // todos, onNewTodo, onRemoveTodo, onToggleTodo
   const { state, onNewTodo, onRemoveTodo, onToggleTodo } = useTodos();
 
   return (

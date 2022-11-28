@@ -29,7 +29,6 @@ export const useTodos = () => {
       type: "[TODO] Remove Todo",
       payload: todoId,
     };
-    console.log({ todoId });
     dispatch(action);
   };
 
@@ -38,7 +37,6 @@ export const useTodos = () => {
       type: "[TODO] Toggle Todo",
       payload: todoId,
     };
-    console.log({ todoId });
     dispatch(action);
   };
   return { state, onNewTodo, onRemoveTodo, onToggleTodo };
