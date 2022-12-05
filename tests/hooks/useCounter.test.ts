@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 
 import { useCounter } from "../../src/hooks/useCounter";
 
@@ -12,10 +12,8 @@ const DEFAULT_VALUES = {
 describe("useCounter", () => {
   it("return default values", () => {
     const { result } = renderHook(() => useCounter({}));
-    const { counter, increment, decrement, step } = result.current;
+    const { counter, step } = result.current;
     expect(counter).toBe(DEFAULT_VALUES.initialValue);
-    // expect(increment()).toBe(DEFAULT_VALUES.initialValue + DEFAULT_VALUES.step);
-    // expect(decrement()).toBe(DEFAULT_VALUES.initialValue - DEFAULT_VALUES.step);
     expect(step).toBe(DEFAULT_VALUES.step);
   });
 
@@ -28,5 +26,27 @@ describe("useCounter", () => {
     const { counter, step } = result.current;
     expect(counter).toBe(SETTED_VALUES.initialValue);
     expect(step).toBe(SETTED_VALUES.step);
+  });
+
+  it("return incremented value", () => {
+    const { result } = renderHook(() => useCounter({}));
+    const { increment } = result.current;
+
+    act(() => increment());
+
+    // We need to get the counter after the the act, so that it has actually changed
+    const { counter } = result.current;
+    expect(counter).toBe(DEFAULT_VALUES.initialValue + DEFAULT_VALUES.step);
+  });
+
+  it("return decremented value", () => {
+    const { result } = renderHook(() => useCounter({}));
+    const { decrement } = result.current;
+
+    act(() => decrement());
+
+    // We need to get the counter after the the act, so that it has actually changed
+    const { counter } = result.current;
+    expect(counter).toBe(DEFAULT_VALUES.initialValue - DEFAULT_VALUES.step);
   });
 });
