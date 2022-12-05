@@ -8,13 +8,13 @@ export const CounterWithCustomHook = () => {
     <>
       <h1>Counter With Custom Hook: {counter}</h1>
       <hr />
-      <button className="btn btn-secondary" onClick={decrement}>
+      <button className="btn btn-secondary" onClick={() => decrement()}>
         -{step}
       </button>
       <button className="btn btn-outline-dark" onClick={reset}>
         Reset
       </button>
-      <button className="btn btn-secondary" onClick={increment}>
+      <button className="btn btn-secondary" onClick={() => increment()}>
         +{step}
       </button>
     </>

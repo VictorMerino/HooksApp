@@ -23,13 +23,15 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
+    {/* <CounterApp /> */}
+    <CounterWithCustomHook />
     {/* <React.StrictMode> */}
     {/* // <FormWithCustomHook /> */}
     {/* // <MultipleCustomHooks /> */}
     {/* // <Layout /> */}
     {/* // <MemorizeWithHook /> */}
     {/* // <CallbackHook /> */}
-    <MainApp />
+    {/* <MainApp /> */}
     {/* //{" "} */}
     {/* </React.StrictMode> */}
   </BrowserRouter>
