@@ -9,6 +9,8 @@ const DEFAULT_VALUES = {
   step: 1,
 };
 
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
 describe("useCounter", () => {
   it("returns default values", () => {
     const { result } = renderHook(() => useCounter({}));
@@ -69,5 +71,19 @@ describe("useCounter", () => {
     // We need to get the counter after the the act, so that it has actually changed
     const { counter } = result.current;
     expect(counter).toBe(DEFAULT_VALUES.maxValue);
+  });
+
+  it("returns to the initial value when calling reset", () => {
+    const { result } = renderHook(() => useCounter({}));
+    const { increment, decrement, reset } = result.current;
+
+    act(() => {
+      increment(random(DEFAULT_VALUES.minValue, DEFAULT_VALUES.maxValue));
+      decrement(random(DEFAULT_VALUES.minValue, DEFAULT_VALUES.maxValue));
+      reset();
+    });
+
+    const { counter } = result.current;
+    expect(counter).toBe(DEFAULT_VALUES.initialValue);
   });
 });
