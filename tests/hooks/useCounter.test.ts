@@ -10,14 +10,14 @@ const DEFAULT_VALUES = {
 };
 
 describe("useCounter", () => {
-  it("return default values", () => {
+  it("returns default values", () => {
     const { result } = renderHook(() => useCounter({}));
     const { counter, step } = result.current;
     expect(counter).toBe(DEFAULT_VALUES.initialValue);
     expect(step).toBe(DEFAULT_VALUES.step);
   });
 
-  it("return user setted values", () => {
+  it("returns user setted values", () => {
     const SETTED_VALUES = {
       initialValue: 100,
       step: 5,
@@ -28,7 +28,7 @@ describe("useCounter", () => {
     expect(step).toBe(SETTED_VALUES.step);
   });
 
-  it("return incremented value", () => {
+  it("returns incremented value", () => {
     const { result } = renderHook(() => useCounter({}));
     const { increment } = result.current;
 
@@ -39,8 +39,8 @@ describe("useCounter", () => {
     expect(counter).toBe(DEFAULT_VALUES.initialValue + DEFAULT_VALUES.step);
   });
 
-  it("return decremented value", () => {
-    const DECREMENT_ARGUMENT = 3;
+  it("returns decremented value", () => {
+    const DECREMENT_ARGUMENT = 2;
     const { result } = renderHook(() => useCounter({}));
     const { decrement } = result.current;
 
@@ -54,5 +54,20 @@ describe("useCounter", () => {
     expect(counter).toBe(
       DEFAULT_VALUES.initialValue - DEFAULT_VALUES.step - DECREMENT_ARGUMENT
     );
+  });
+
+  it("returns maxValue if max is reached", () => {
+    const INCREMENT_ARGUMENT = DEFAULT_VALUES.maxValue + 1;
+    const { result } = renderHook(() => useCounter({}));
+    const { increment } = result.current;
+
+    act(() => {
+      increment();
+      increment(INCREMENT_ARGUMENT);
+    });
+
+    // We need to get the counter after the the act, so that it has actually changed
+    const { counter } = result.current;
+    expect(counter).toBe(DEFAULT_VALUES.maxValue);
   });
 });
