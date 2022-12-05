@@ -8,14 +8,14 @@ export const useCounter = ({
 }) => {
   const [counter, setCounter] = useState(initialValue);
 
-  const increment = () => {
+  const increment = (value = step) => {
     if (counter === maxValue) return;
-    setCounter(counter + step);
+    setCounter((current) => current + value);
   };
 
-  const decrement = () => {
+  const decrement = (value = step) => {
     if (counter === minValue) return;
-    setCounter(counter - step);
+    setCounter((current) => current - value);
   };
 
   const reset = () => {

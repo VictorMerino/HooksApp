@@ -40,13 +40,19 @@ describe("useCounter", () => {
   });
 
   it("return decremented value", () => {
+    const DECREMENT_ARGUMENT = 3;
     const { result } = renderHook(() => useCounter({}));
     const { decrement } = result.current;
 
-    act(() => decrement());
+    act(() => {
+      decrement();
+      decrement(DECREMENT_ARGUMENT);
+    });
 
     // We need to get the counter after the the act, so that it has actually changed
     const { counter } = result.current;
-    expect(counter).toBe(DEFAULT_VALUES.initialValue - DEFAULT_VALUES.step);
+    expect(counter).toBe(
+      DEFAULT_VALUES.initialValue - DEFAULT_VALUES.step - DECREMENT_ARGUMENT
+    );
   });
 });
