@@ -1,7 +1,7 @@
 import React from "react";
 import { useFetch, useCounter } from "../hooks";
 import { Quote, LoadingQuote } from "../components";
-import { BBQuote } from "../types/BBQuote";
+// import { BBQuote } from "../types/BBQuote";
 
 export const MultipleCustomHooks = () => {
   const { counter, increment } = useCounter({ initialValue: 1, step: 1 });
@@ -10,7 +10,7 @@ export const MultipleCustomHooks = () => {
     data,
     isLoading,
     hasError,
-  }: { data: BBQuote[] | null; isLoading: boolean; hasError: boolean | null } =
+  } /* : { data: BBQuote[] | null; isLoading: boolean; hasError: boolean | null } */ =
     useFetch(url);
 
   return (
@@ -24,6 +24,7 @@ export const MultipleCustomHooks = () => {
         className="btn btn-primary"
         onClick={() => increment()}
         disabled={isLoading}
+        data-testid="nextQuote"
       >
         Get next quote
       </button>
