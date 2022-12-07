@@ -14,7 +14,6 @@ export const LoginPage = () => {
     name: dummyUser.name,
     email: dummyUser.email,
   });
-  console.log(user);
   return (
     <>
       <h2>LoginPage</h2>
