@@ -1,4 +1,4 @@
-import { todoReducer } from "../../src/08-useReducer/reducers";
+import { todoReducer } from "../../../src/08-useReducer/reducers";
 
 describe("todoReducer tests", () => {
   const INITIAL_STATE = [
