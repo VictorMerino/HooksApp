@@ -1,17 +1,17 @@
 import { FormEvent } from "react";
 import { useForm } from "../../hooks";
-import { Todo } from "../types";
+// import { Todo } from "../types";
 
-export const AddTodo = ({ onNewTodo }: { onNewTodo: Function }) => {
+export const AddTodo = ({ onNewTodo } /* : { onNewTodo: Function } */) => {
   // @ts-expect-error
   const { description, onInputChange, onResetForm } = useForm({
     description: "",
   });
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event /* : FormEvent */) => {
     event.preventDefault();
     if (!description.length) return;
 
-    const newTodo: Todo = {
+    const newTodo /* : Todo */ = {
       id: new Date().getTime(),
       description,
       done: false,

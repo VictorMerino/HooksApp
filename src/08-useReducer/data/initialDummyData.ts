@@ -1,6 +1,6 @@
-import { Todo } from "../types";
+// import { Todo } from "../types";
 
-export const initialState: Todo[] = [
+export const initialState /* : Todo[] */ = [
   {
     id: new Date().getTime(),
     description: "Do the laundry",

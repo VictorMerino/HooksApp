@@ -2,7 +2,7 @@ import { useEffect, useReducer } from "react";
 
 import { initialState } from "../data/initialDummyData";
 
-import { Todo } from "../types";
+// import { Todo } from "../types";
 import { todoReducer } from "../reducers";
 import { getItems, setItem } from "../services/LocalStorageRepository";
 
@@ -20,7 +20,7 @@ export const useTodos = () => {
     setItem(todos);
   }, [todos]);
 
-  const onNewTodo = (todo: Todo) => {
+  const onNewTodo = (todo /* : Todo */) => {
     const action = {
       type: "[TODO] Add Todo",
       payload: todo,
@@ -28,7 +28,7 @@ export const useTodos = () => {
     dispatch(action);
   };
 
-  const onRemoveTodo = (todoId: number) => {
+  const onRemoveTodo = (todoId /* : number */) => {
     const action = {
       type: "[TODO] Remove Todo",
       payload: todoId,
@@ -36,7 +36,7 @@ export const useTodos = () => {
     dispatch(action);
   };
 
-  const onToggleTodo = (todoId: number) => {
+  const onToggleTodo = (todoId /* : number */) => {
     const action = {
       type: "[TODO] Toggle Todo",
       payload: todoId,

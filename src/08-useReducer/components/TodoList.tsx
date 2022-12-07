@@ -1,17 +1,15 @@
-import { Todo } from "../types";
+// import { Todo } from "../types";
 import { TodoItem } from ".";
 
-interface TodoListProps {
+/* interface TodoListProps {
   todos: Todo[];
   onRemoveTodo: Function;
   onToggleTodo: Function;
-}
+} */
 
-export const TodoList = ({
-  todos,
-  onRemoveTodo,
-  onToggleTodo,
-}: TodoListProps) => {
+export const TodoList = (
+  { todos, onRemoveTodo, onToggleTodo } /* : TodoListProps */
+) => {
   return (
     <ul className="list-group mb-4">
       {todos.map((todo) => {
