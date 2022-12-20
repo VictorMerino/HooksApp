@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "../../hooks";
-import { UserContext } from "../context/userContext";
+import { UserContext } from "../context/UserContext";
 
 const dummyUser = {
   id: 1,
