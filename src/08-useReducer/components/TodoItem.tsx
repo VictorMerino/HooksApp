@@ -1,14 +1,16 @@
-/* import { Todo } from "../types";
+import { Todo } from "../types";
 
 interface TodoItemProps {
   todo: Todo;
   onRemoveTodo: Function;
   onToggleTodo: Function;
-} */
+}
 
-export const TodoItem = (
-  { todo, onRemoveTodo, onToggleTodo } /* : TodoItemProps */
-) => {
+export const TodoItem = ({
+  todo,
+  onRemoveTodo,
+  onToggleTodo,
+}: TodoItemProps) => {
   return (
     <li className="list-group-item d-flex justify-content-between">
       <span

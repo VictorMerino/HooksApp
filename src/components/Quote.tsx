@@ -1,7 +1,7 @@
 import React from "react";
-// import { BBQuote } from "../types/BBQuote";
+import { BBQuote } from "../types/BBQuote";
 
-export const Quote = ({ quote } /* : { quote: BBQuote } */) => {
+export const Quote = ({ quote }: { quote: BBQuote }) => {
   return (
     <blockquote>
       <p>
