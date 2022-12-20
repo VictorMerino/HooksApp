@@ -4,7 +4,7 @@ import React from "react";
 import { UserContext } from "../../../src/09-useContext/context/UserContext";
 import { HomePage } from "../../../src/09-useContext/views/HomePage";
 
-describe.skip("<HomePage /> tests", () => {
+describe("<HomePage /> tests", () => {
   const user = { id: 1, name: "Davo", email: "davo@davo.com" };
   it("renders page without user", () => {
     render(

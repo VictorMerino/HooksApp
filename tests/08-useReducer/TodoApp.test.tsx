@@ -20,7 +20,6 @@ describe("<TodoApp /> tests", () => {
   it("should show correctly the component", () => {
     render(<TodoApp />);
 
-    console.log(screen.getByRole("heading").textContent);
     expect(screen.getByRole("heading").textContent).toContain(
       `TodoApp: ${TODOS.todosCount}`
     );
