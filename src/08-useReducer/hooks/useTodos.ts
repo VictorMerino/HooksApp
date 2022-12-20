@@ -14,7 +14,7 @@ export const useTodos = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
   const todosCount = todos.length;
-  const todosPendingCount = todos.filter((todo) => !todo.done).length;
+  const todosPendingCount = todos.filter((todo: Todo) => !todo.done).length;
 
   useEffect(() => {
     setItem(todos);
